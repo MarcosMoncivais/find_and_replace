@@ -9,7 +9,7 @@ var findReplace = function (string, wordOne, wordTwo) {
     }
   }
   string = splitString.join(" ");
-  return string;
+  return output;
 
 };
 
@@ -18,7 +18,7 @@ $(document).ready(function(){
     var string = $("input#string").val();
     var wordOne = $("input#wordOne").val();
     var wordTwo = $("input#wordTwo").val();
-    var output = findAndReplace(string, wordOne, wordTwo);
+    var output = findReplace(string, wordOne, wordTwo);
     $(".output").text(output);
     event.preventDefault();
   });
