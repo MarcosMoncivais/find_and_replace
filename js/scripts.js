@@ -1,25 +1,37 @@
-var findReplace = function (string, wordOne, wordTwo) {
-  var string = string.toLowerCase();
-  var splitString = string.split(" ");
+//check to see if word shows in user input form get-go
+var find = function (wordOne, wordTwo) {
+	if (wordOne === wordTwo) {
+		return true;
+} else {
+	return false;
+	}
+};
 
-
-  for(var i = 0; i < splitString.length; i++) {
-    if(splitString[i] === wordOne) {
-      splitString[i] = wordTwo;
-    }
+//OMG JUST GOT THIS PASSING
+	var findReplace = function(sentence, wordFind, wordReplace) {
+	var UserInput = sentence.split(" ");
+	for (var i = 0; i < UserInput.length; i++) {
+		if (UserInput[i] === wordFind) {
+	  		UserInput[i] = wordReplace;
+		}
+	}
+	var resultString = UserInput.join(" ");
+  if (resultString === sentence) {
+    return "nope!";
+  } else {
+    return resultString;
   }
-  string = splitString.join(" ");
-  return output;
-
 };
 
 $(document).ready(function(){
-  $("form#findreplace").submit(function(event) {
-    var string = $("input#string").val();
-    var wordOne = $("input#wordOne").val();
-    var wordTwo = $("input#wordTwo").val();
-    var output = findReplace(string, wordOne, wordTwo);
-    $(".output").text(output);
+  $("form#findReplace").submit(function(event) {
+    var sentence = $("input#sentence").val();
+    var wordFind = $("input#wordFind").val();
+    var wordReplace = $("input#wordReplace").val();
+    
+    var newSentence = findReplace(sentence, wordFind, wordReplace);
+    
+    $(".resultString").show();
     event.preventDefault();
   });
 

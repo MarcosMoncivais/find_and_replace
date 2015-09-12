@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link href="../css/styles.css" rel="stylesheet" type="text/css">
     <script src="../js/jquery-1.11.3.js"></script>
     <script src="../js/scripts.js"></script>
@@ -13,27 +13,21 @@
       <body>
         <a href="https://imgflip.com/i/qwwaw"><img src="https://i.imgflip.com/qwwaw.jpg" title="made at imgflip.com"/></a>
       </body>
-
-      <form id="findReplace">
-      <div class="form-group">
-        <label for="string"> Enter a sentence to execute </label>
-        <input id="string" type="text" require>
-      </div>
-
-      <div class="form-group">
-        <label for="wordOne"> Enter the word you want gone: </label>
-        <input id="wordOne" type="text">
-      </div>
-
-      <div class="form-group">
-        <label for="wordTwo"> Enter the word you want in it's place: </label>
-        <input id="wordTwo" type="text">
-      </div>
+      <form>
+        <div class="form-group">
+          <label for="sentence">Sentence:</label>
+          <input class="form-control" id="sentence">
+          <label for="wordFind">Find word:</label>
+          <input class="form-control" id="wordFind">
+          <label for="wordReplace">Replace with:</label>
+          <input class="form-control" id="wordReplace">
+        </div>
         <button type="submit" class="btn">Boom</button>
       </form>
 
-      <div id="output">
-        <p><span class="output"></span></p>
+
+      <div class="result">
+        <p><id="return"><span class ="newSentence"</span></p>
       </div>
     </div>
   </body>
