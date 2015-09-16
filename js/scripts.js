@@ -2,36 +2,41 @@
 var find = function (wordOne, wordTwo) {
 	if (wordOne === wordTwo) {
 		return true;
-} else {
-	return false;
+	} else {
+		return false;
 	}
 };
 
 //OMG JUST GOT THIS PASSING
-	var findReplace = function(sentence, wordFind, wordReplace) {
-	var UserInput = sentence.split(" ");
-	for (var i = 0; i < UserInput.length; i++) {
-		if (UserInput[i] === wordFind) {
-	  		UserInput[i] = wordReplace;
+var findReplace = function(sentence, wordFind, wordReplace) {
+	var userInput = sentence.split(" ");
+	for (var i = 0; i < userInput.length; i++) {
+		// if (userInput[i] === wordFind) {
+	 	//     userInput[i] = wordReplace;
+		// }
+		if (find(userInput[i], wordFind)) {
+	  		userInput[i] = wordReplace;
 		}
 	}
-	var resultString = UserInput.join(" ");
-  if (resultString === sentence) {
-    return "nope!";
-  } else {
-    return resultString;
-  }
+	var resultString = userInput.join(" ");
+	if (resultString === sentence) {
+		return "nope!";
+	} else {
+		return resultString;
+	}
 };
 
 $(document).ready(function(){
   $("form#findReplace").submit(function(event) {
+
     var sentence = $("input#sentence").val();
     var wordFind = $("input#wordFind").val();
     var wordReplace = $("input#wordReplace").val();
-    
+
     var newSentence = findReplace(sentence, wordFind, wordReplace);
-    
-    $(".resultString").show();
+
+	$(".newSentence").text(newSentence);
+    $(".result").show();
     event.preventDefault();
   });
 
